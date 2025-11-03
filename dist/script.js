@@ -30,4 +30,22 @@ function calculate() {
         }
     }
 }
+window.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+        const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '+', '-', '*', '/'];
+        if (allowedKeys.includes(key)) {
+            insert(key);
+        }
+        else if (key === 'Enter') {
+            calculate();
+        }
+        else if (key === 'Backspace') {
+            back();
+        }
+        else if (key.toLowerCase() === 'c') {
+            clean();
+        }
+    });
+});
 //# sourceMappingURL=script.js.map
